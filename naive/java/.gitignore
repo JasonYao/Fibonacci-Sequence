@@ -1,0 +1,8 @@
+# Java ignores
+*.class
+
+# OSX ignores
+.DS_Store
+
+# IDE ignores
+.idea/
