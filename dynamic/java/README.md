@@ -1,18 +1,5 @@
-# Naive Java Fibonacci Number Finder
+# Dynamic Java Fibonacci Number Finder
 By Jason Yao
-
-## A general note beforehand
-I'd like to take this opportunity to clarify that this fibonacci number generator is based on the system where:
-
-The `0`th fibonacci number is: `0`
-
-The `1`st fibonacci number is: `1`
-
-The `2`nd fibonacci number is: `1`
-
-The `3`rd fibonacci number is: `2`
-
-etc. etc.
 
 ## Description: Recursive
 The recursive model depends upon a driver in order to feed some relevant information. This allows us to use pre-computed information from previous
