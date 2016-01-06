@@ -1,28 +1,60 @@
-# Fibonacci-Sequence
+# Dynamic Java Fibonacci Number Finder
 By Jason Yao
 
-## Description
-A repo showing different implementations of generating the `n`th fibonacci number. Overarching computing principles involved:
+## Description: Recursive
+The recursive model depends upon a driver in order to feed some relevant information. This allows us to use pre-computed information from previous
+method calls, without having to resort to doing something like the following, for which each prior value has to be recalculated, increasing both
+time and space complexity as `n` increases
 
-- Recursion vs Iterative approach (Recursion may have a more elegant solution sometimes, while iterative has faster runtime due to much fewer stack frame 
-calls)
+```java
+long current = findFibonacciNumberRecursive(n - 2) + findFibonacciNumberRecursive(n - 1) // NOTE: Very BAD
+```
 
-- Dynamic Programming (memoization of prior calculations for future use, only useful for recursion, since iterative already uses an even faster method)
+## Description: Iterative
+The iterative model is a much more elegant solution, in which all work is done with 3 `long` variables, thus making the algorithm exceedingly efficient
+both from the avoidance of making new stack frames from method calls, to efficient use of referencing and memory space usage.
 
-- Direct algorithmic Solving (A specific algorithm has been shown to be able to generate the nth fibonacci number, though accuracy decreases as n goes up)
+## Compilation & Running
 
-## A general note beforehand
-I'd like to take this opportunity to clarify that all fibonacci number generators will be based on the system where:
+### The easy way
+A compile and run script has been included for your benefit, the commands to run so is simply, where n is a non-negative integer:
 
-The `0`th fibonacci number is: `0`
+```sh
+./compileAndTest.sh <recursive | iterative> <n>
+```
 
-The `1`st fibonacci number is: `1`
+E.g. Run the program recursively to find the 100th fibonacci number
 
-The `2`nd fibonacci number is: `1`
+```sh
+./compileAndTest.sh recursive 100
+```
 
-The `3`rd fibonacci number is: `2`
+E.g. Run the program iteratively to find the 100th fibonacci number
 
-etc. etc.
+```sh
+./compileAndTest.sh iterative 100
+```
 
-## License
-This repo is under the GNU GPL license as described [here](LICENSE), unless otherwise stated.
+### The manual way
+
+```sh
+mkdir -p output
+javac src/*.java -d output # Compiles the program
+java -cp output FibonacciFinder <iterative | recursive> <n> # Runs the program
+```
+
+E.g. Run the program recursively to find the 100th fibonacci number
+
+```sh
+mkdir -p output
+javac src/*.java -d output # Compiles the program
+java -cp output FibonacciFinder recursive 100 # Runs the program
+```
+
+E.g. Run the program iteratively to find the 100th fibonacci number
+
+```sh
+mkdir -p output
+javac src/*.java -d output # Compiles the program
+java -cp output FibonacciFinder iterative 100 # Runs the program
+```
