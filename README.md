@@ -20,7 +20,7 @@ A repo showing different implementations of generating the `n`th fibonacci numbe
 - Recursion vs Iterative approach (Recursion may have a more elegant solution sometimes, while iterative has faster runtime due to much fewer stack frame
 calls)
 
-- Dynamic Programming (memoization of prior calculations for future use, only useful for recursion, since iterative already uses an even faster method)
+- Dynamic Programming (memoisation of prior calculations for future use, only useful for recursion, since iterative already uses an even faster method)
 
 - Direct algorithmic Solving (A specific algorithm has been shown to be able to generate the nth fibonacci number, though accuracy decreases as n goes up)
 
@@ -61,7 +61,7 @@ that we enjoyed with the naive approach. This is because `java`'s `BigInteger` a
 a new object every time we calculate a new value.
 
 HOWEVER- all is not lost, and optimisations that can work, such as memoisation of prior calculated values can now be used, resulting in space complexity of
-`O(n)`, and speed complexity of `O(n)`.
+`O(n)`, and speed complexity of `O(n)`, instead of space complexity of `O(n^2)` and speed complexity of `O(n^3)` without the speedup from memoisation.
 
 ### The Direct Solution
 This implementation contains a [lossy](#footnotes) direct approach to generating the `n`th fibonacci number utilising Binet's formula:
